@@ -16,7 +16,7 @@
       <nav>
         <div class="personal_logo">Seann Lee</div>
         <ul class="nav__link--list">
-          <li>
+          <li class="nav__link">
             <a
               href=""
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
@@ -24,7 +24,7 @@
               Languages</a
             >
           </li>
-          <li>
+          <li class="nav__link">
             <a
               href=""
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
@@ -32,9 +32,9 @@
               Projects</a
             >
           </li>
-          <li>
+          <li class="nav__link">
             <a href="" class="nav__link--anchor nav__link--anchor-primary">
-              Contact Me</a
+              Contact</a
             >
           </li>
         </ul>
@@ -58,16 +58,24 @@
               management and Masters in Computer Science. Here is to my journey!
             </p>
             <div class="about-me__links">
-              <a href="" class="about-me__link">
+              <a
+                href="https://www.linkedin.com/in/seann-lee-63246113b/"
+                target="_blank"
+                class="about-me__link"
+              >
                 <i class="fab fa-linkedin-in"></i>
               </a>
-              <a href="" class="about-me__link">
+              <a
+                href="https://github.com/seannlee123"
+                target="_blank"
+                class="about-me__link"
+              >
                 <i class="fab fa-github"></i>
               </a>
               <a href="" class="about-me__link">
                 <i class="far fa-envelope"></i>
               </a>
-              <a href="" class="about-me__link">
+              <a href="./assets/SLResume.docx.pdf" target="_blank"  class="about-me__link">
                 <i class="fas fa-file-pdf"></i>
               </a>
             </div>
@@ -100,7 +108,8 @@
             <div class="language">
               <figure class="language__img--wrapper">
                 <img
-                  src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="CSS Logo"
+                  src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
+                  alt="CSS Logo"
                   class="language__img"
                   alt="CSS logo"
                 />
@@ -110,7 +119,8 @@
             <div class="language">
               <figure class="language__img--wrapper">
                 <img
-                  src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="JavaScript Logo"
+                  src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
+                  alt="JavaScript Logo"
                   class="language__img"
                   alt="JS"
                 />
@@ -171,5 +181,112 @@
         </div>
       </div>
     </section>
+    <section id="projects">
+      <div class="container">
+        <!-- to add padding up and down  -->
+        <div class="row">
+          <!-- to add left and right (width) -->
+          <h1 class="section__title">Here are some of my Projects</h1>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <!-- wraps entire project -->
+                <img
+                  src="./assets/c54 (2).PNG"
+                  class="project__img"
+                  alt="Django"
+                />
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Django test project
+                  </h3>
+                  <h4 class="project__description--subtitle">
+                    Django, Python, Bootstrap, HTML, CSS
+                  </h4>
+                  <p class="project__description--para">
+                    Tested functionality of Django webframe work utilizing built
+                    in functions, implementing CRUD (Create Read Update and
+                    Delete), and dynamic URLs.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="https://github.com/seannlee123/DjangoWebsite" class="project__description--link" target="_blank">
+                      <i class="fab fa-github"></i>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__wrapper">
+                <!-- wraps entire project -->
+                <img
+                  src="./assets/unnamed-chunk-11-1.png"
+                  class="project__img"
+                  alt="Django"
+                />
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Video-game-analysis-with-R
+                  </h3>
+                  <h4 class="project__description--subtitle">
+                    R language
+                  </h4>
+                  <p class="project__description--para">
+                    Using R language to perform data analysis with video game sales based on continents and regions. 
+                    This contains data visualization, LR, and training models.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="https://github.com/seannlee123/Video-game-analysis-with-R" class="project__description--link" target="_blank">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="row footer__row">
+        <a href="#" class="footer__anchor">
+          <figure class="footer__logo">
+            <img src="./assets/logo-search-grid-1x.png" class="footer__logo--img" alt=""> <!-- insert personal logo here-->
+          </figure>
+          <span class="footer__logo--popper">
+            Top
+            <i class="fas fa-arrow-up"></i>
+          </span>
+        </a>
+        <div class="footer__social--list">
+          <a href="" class="
+          footer__social--link
+          link__hover-effect
+          link__hover-effect--white"
+          target="_blank">Github</a>
+
+          <a href="" class="
+          footer__social--link
+          link__hover-effect
+          link__hover-effect--white"
+          target="_blank">linkedin</a>
+
+          <a href="mailto:seannlee123@outlook.com" class="
+          footer__social--link
+          link__hover-effect
+          link__hover-effect--white"
+          target="_blank">Email</a>
+          <a href="./assets/SLResume.docx.pdf" target="_blank" class="
+          footer__social--link
+          link__hover-effect
+          link__hover-effect--white"
+          target="_blank">Resume</a>
+        </div>
+        <div class="footer__copyright"> Copyright © Seann Lee </div>
+      </div>
+    </footer>
+    
   </body>
 </html>

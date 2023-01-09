@@ -20,8 +20,44 @@ p{
     font-size: 16px;
 
 }
+
+a{
+    text-decoration: none;
+    position: relative;
+    transition: opacity 300ms ease;
+}
+
+i:hover{
+    opacity: 0.7:
+}
+
 li{
     list-style-type: none;
+}
+
+.link__hover-effect:after{
+    content: "";
+    position: absolute;
+    height: 3px;
+    
+    width: 0%;
+    bottom: -3px;
+    right: 0;
+    transition: all 300ms ease;
+}
+
+.link__hover-effect:hover:after{
+    width: 100%;
+    left: 0;
+
+}
+
+.link__hover-effect--white:after{
+    background-color: white;
+}
+
+.link__hover-effect--black:after{
+    background-color:black ;
 }
 
 .flex{
@@ -35,6 +71,7 @@ li{
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 12px;
 }
 
 .text--seafoam{
@@ -63,6 +100,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
 }
 .nav__link--list{
 display: flex;
@@ -71,7 +109,7 @@ display: flex;
 .nav__link--anchor{
     margin: 0 12px;
     color: black;
-    text-decoration: none;
+    
     font-weight: 700;
 }
 
@@ -121,7 +159,26 @@ display: flex;
      overflow: hidden;
      box-shadow:  0 18px 16px rgba(0,0,0,0.16);
      margin-bottom: 28px;
+     animation: animate-profile-picture 200ms backwards;
 }
+
+/*animating picture--mask */
+@keyframes animate-profile-picture{
+    0%{
+        transform: scale(0);
+
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+
 
 .about-me__picture{
     width: 100%;
@@ -134,10 +191,21 @@ display: flex;
 .about-me__info--para{
     font-size: 20px;
     margin-bottom: 28px;
+    animation: fade-up 650ms 600ms backwards;
+
 }
 
 .about-me__info--title{
     margin-bottom: 16px;
+    animation: fade-up 650ms 400ms backwards;
+}
+
+.about-me__link{
+    animation: fade-up 650ms 800ms backwards;
+}
+
+.about-me__links{
+    animation: fade-up 650ms 800ms backwards;
 }
 
 .about-me__link{
@@ -147,6 +215,19 @@ display: flex;
     padding: 0 16px;
     
 }
+ 
+@keyframes fade-up{
+    0%{
+        opacity: 0;
+        transform: translatey(40px);    
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
 .about-me__img--container{
     flex: 1;
     display: flex;
@@ -156,6 +237,17 @@ display: flex;
 
 .about-me__img{
     width: 100%;
+    animation: fade-in 800ms 700ms backwards;
+}
+
+@keyframes fade-in{
+    0% {
+        opacity: 0;
+
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Tech-stacks */
@@ -191,6 +283,7 @@ display: flex;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    justify-content: center;
 
 }
 .language__name{
@@ -204,4 +297,222 @@ display: flex;
 .language:hover .language__name{
     transform: scale(1.5);
     opacity: 1;
+}
+
+/* PROJECT SECTION */
+
+.project{
+    margin-bottom: 135px;
+}
+
+.project:last-child{
+    margin-bottom: 40px;
+}
+
+.project__img{
+    width: 100%;
+    transition: all 500ms ease;
+}
+
+.project__wrapper{
+    box-shadow: 0px 20px 80px rgba(0, 0, 0, 0.45); /*0px offset horizontally 20px offset vertically 80px blur*/
+    border-radius: 20px; /*smooth edges */
+    overflow: hidden; /*stop overflow of image*/
+    position: relative;
+    
+}
+
+.project__wrapper::before{ /*before pseudo class */
+    content: "";
+    position: absolute; /*we dont want position of this affecting anything */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1c1d25;
+    opacity: 0; /*so show project little bit shadow*/
+    transition: opacity 450ms ease-in-out;
+    z-index: 2;
+    
+}
+
+ .project:hover .project__wrapper:before{ /*pseudo to hover and before */
+    opacity: 0.7; /*less than 1 opacity so it can be seen */
+}
+
+.project:hover .project__img{
+    transform: scale(0.9);
+    filter: blur(5px);
+}
+
+.project__list {
+    padding-top: 40px;
+}
+.project__description{
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    transform: translateY(100%);
+    max-width: 550px;
+    z-index: 3;
+    opacity: 0;
+    transition: transform  450ms, opacity 300ms; 
+    /*part of moving description up & down */
+}
+
+.project:hover .project__description{
+    opacity: 1;
+    transform: translateY(-50%); 
+    /*part of moving description up & down */
+
+}
+
+
+.project__description--title{
+    font-size: 40px;
+}
+
+.project__description--para{
+    margin: 16px 0;
+
+}
+
+.project__description--link{
+    font-size: 20px;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+.project__description--title, 
+.project__description--subtitle,
+.project__description--para, 
+.project__description--link
+{
+text-align: left;
+color: #fff;
+
+}
+
+/* footer */
+
+footer{
+    background-color: #242424;
+}
+
+.footer__logo--img{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+   
+}
+
+
+.footer__row{
+    padding: 8% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__social--list{
+    margin-bottom: 28px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer__social--link,
+.footer__copyright
+{
+    color:#ffff;
+
+}
+
+.footer__logo--popper{
+    position: absolute;
+    color: #fff;
+    top: 30px;
+    font-weight: 700;
+    opacity: 0;
+    transition: all 300ms;
+    font-size: 20px;
+
+}
+
+.footer__anchor {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.footer__anchor:hover .footer__logo--popper{
+    transform: translateX(90px);
+    opacity: 2;
+}
+
+/*small phones, tablets, large smartphones */
+
+@media (max-width: 768px){
+nav{
+    height: 68px;
+}
+
+h1{
+    font-size: 28px;
+}
+.about-me__info--para{
+
+}
+
+.language{
+    width: calc(100%/3);
+}
+
+.project__description--para{
+    font-size: 14px;
+}
+
+.project__description{
+    left: 30px;
+    padding-right: 30px;
+}
+
+}
+
+
+/* small phones */
+
+@media (max-width: 480px){
+
+.nav__link:not(:last-child){
+    display: none;
+}
+
+.project__description{
+    padding: 0;
+    left: 0;
+    width: 100%;
+}
+
+.project__description--para{
+    display: none;
+}
+
+.project__description--links{
+    display: flex;
+    justify-content: center;
+}
+
+.project__description--title{
+    line-height: 1;
+    font-size: 32px;
+    text-align: center;
+}
+
+.project__description--subtitle{
+    text-align: center;
+    margin: 12px 0;
+}
+
 }
